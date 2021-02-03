@@ -8,7 +8,7 @@
             "name": "i_sense_lab_project",
             "request": "launch",
             "type": "dart",
-            "program": "lib/pages/home/main.dart"
+            "program": "lib/screens/home/main.dart"
         }
     ]
 }

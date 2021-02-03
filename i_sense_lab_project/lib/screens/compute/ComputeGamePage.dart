@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../componenets/InputTypeQuestionBorad.dart';
+import '../../componenets/InputTypeQuestionBorad.dart';
 
 class ComputeGameScreen extends StatefulWidget {
   @override

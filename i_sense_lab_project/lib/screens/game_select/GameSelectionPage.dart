@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../componenets/GameIcon.dart';
+import '../../componenets/GameIcon.dart';
 
 class GameSelectionScreen extends StatelessWidget {
   @override

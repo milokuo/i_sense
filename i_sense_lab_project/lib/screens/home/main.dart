@@ -8,13 +8,16 @@ import '../../componenets/OptionForm.dart';
 
 //pages
 import '../../screens/orientation/OrientationSettingPage.dart';
-import '../GameSelectionPage.dart';
-import '../ComputeGamePage.dart';
+import '../game_select/GameSelectionPage.dart';
+import '../compute/ComputeGamePage.dart';
 import '../../screens/orientation/OrientationGamePage.dart';
 import '../../screens/memorization/MemorizationGameScreen.dart';
 import 'package:i_sense_lab_project/screens/login/login_screen.dart';
-
+import 'package:i_sense_lab_project/screens/bluetooth/bluetooth_setting_screen.dart';
 import 'components/body.dart';
+
+//packages
+import 'package:bot_toast/bot_toast.dart';
 
 void main() => runApp(EasyHappyLifeApp());
 
@@ -30,6 +33,7 @@ class EasyHappyLifeApp extends StatelessWidget {
         "OrientationSettingScreen": (context) => OrientationSettingScreen(),
         "OrientationGameScreen": (context) => OrientationGameScreen(),
         "MemorizationGameScreen": (context) => MemorizationGameScreen(),
+        "BluetootheSettingScreen": (context) => BluetootheSettingScreen(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
@@ -37,6 +41,8 @@ class EasyHappyLifeApp extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
     );
   }
 }

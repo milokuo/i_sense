@@ -1,8 +1,10 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blue/flutter_blue.dart';
 import 'package:i_sense_lab_project/constants.dart';
+import 'package:i_sense_lab_project/screens/bluetooth/bluetooth_setting_screen.dart';
 import 'package:i_sense_lab_project/variables.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -58,6 +60,21 @@ class Body extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        RaisedButton(
+          child: Text("我的NAXEN"),
+          onPressed: () async {
+            if (flutterBlue == null || !await flutterBlue.isAvailable) {
+              BotToast.showSimpleNotification(title: "裝置不支援藍芽設備，無法利用NAXEN功能");
+              return;
+            }
+            if (!await flutterBlue.isOn) {
+              BotToast.showSimpleNotification(
+                  title: "開啟失敗", subTitle: "必須先啟動藍芽功能，才能利用NAXEN設備");
+              return;
+            }
+            Navigator.pushNamed(context, "BluetootheSettingScreen");
+          },
         ),
       ],
     );

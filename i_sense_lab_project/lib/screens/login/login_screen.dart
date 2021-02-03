@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:i_sense_lab_project/constants.dart';
-import '../../pages/home/main.dart';
+import '../home/main.dart';
 
 Map<String, String> users = {'dev': '123'};
 
