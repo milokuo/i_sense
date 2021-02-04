@@ -3,7 +3,7 @@ import 'package:flutter_login/flutter_login.dart';
 import 'package:i_sense_lab_project/constants.dart';
 import '../home/main.dart';
 
-Map<String, String> users = {'dev': '123'};
+Map<String, String> users = {'dev': '123', 'q': 'q'};
 
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2250);
@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
           builder: (context) => HomeScreen(),
         ));
       },
-      showDebugButtons: false,
+      showDebugButtons: true,
       onRecoverPassword: _recoverPassword,
       emailValidator: _emailValidator,
       passwordValidator: _passwordValidator,
